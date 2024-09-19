@@ -4,7 +4,7 @@ import { FormProvider, FTextField } from '../components/form'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from "yup"
-import { useLocation, useNavigate, Link as RouterLink } from 'react-router-dom'
+import { useNavigate, Link as RouterLink } from 'react-router-dom'
 import { Alert, Container, IconButton, InputAdornment, Link, Stack } from '@mui/material'
 import VisibilityIcon from '@mui/icons-material/Visibility'
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff'

@@ -53,6 +53,11 @@ function PostCard({ post }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (!editedImage) {
+      setEditedImage(post.image);
+    }
+
     try {
       dispatch(editPost({
         postId: post._id,
@@ -82,20 +87,10 @@ function PostCard({ post }) {
       open={Boolean(anchorEl)}
       onClose={handleMenuClose}
     >
-      <MenuItem
-        onClick={handleDelete}
-        to="/"
-        component={RouterLink}
-        sx={{ mx: 1 }}
-      >
+      <MenuItem onClick={handleDeleteConfirmation}>
         Delete
       </MenuItem>
-      <MenuItem
-        onClick={handleEditPost}
-        to="/"
-        component={RouterLink}
-        sx={{ mx: 1 }}
-      >
+      <MenuItem onClick={handleEditPost}>
         Edit
       </MenuItem>
     </Menu>
